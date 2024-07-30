@@ -1,29 +1,21 @@
 function solution(n, m) {
     var answer = [];
-    var large = 0;
-    var small = 0;
-    
-    if(n>m){
-        large = n;
-        small = m
-    }else{
-        large = m;
-        small = n;
-    }
+    var a = n;
+    var b = m;
     
     while(1){
-        var rem = large%small
+        var rem = n%m
         if(rem == 0) {
-            answer.push(small)
+            answer.push(m)
             break;
         }
         
-        large = small;
-        small = rem;
+        n = m;
+        m = rem;
         
     }
     
-    answer.push((n*m)/answer[0])
+    answer.push((a*b)/answer[0])
     
     return answer;
 }
