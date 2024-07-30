@@ -1,7 +1,6 @@
 function solution(n, m) {
     var answer = [];
-    var a = n;
-    var b = m;
+    var nm = n*m;
     
     while(1){
         var rem = n%m
@@ -15,7 +14,7 @@ function solution(n, m) {
         
     }
     
-    answer.push((a*b)/answer[0])
+    answer.push((nm)/answer[0])
     
     return answer;
 }
