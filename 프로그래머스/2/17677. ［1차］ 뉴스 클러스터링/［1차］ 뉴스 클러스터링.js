@@ -13,7 +13,6 @@ function solution(str1, str2) {
     const arr1 = makePairs(cleanedStr1);
     const arr2 = makePairs(cleanedStr2);
 
-    // 각 원소의 개수를 기록
     const countMap = (arr) => {
         const map = {};
         arr.forEach(item => map[item] = (map[item] || 0) + 1);
@@ -23,7 +22,6 @@ function solution(str1, str2) {
     const map1 = countMap(arr1);
     const map2 = countMap(arr2);
 
-    // 교집합과 합집합 계산
     let intersection = 0;
     let union = 0;
 
@@ -35,6 +33,5 @@ function solution(str1, str2) {
         union += Math.max(count1, count2);
     });
 
-    // 자카드 유사도 계산
     return union === 0 ? 65536 : Math.floor((intersection / union) * 65536);
 }
